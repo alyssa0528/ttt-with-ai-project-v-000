@@ -22,7 +22,7 @@ module Players
       elsif board.turn_count == 2 #when computer is "X," take an available corner
         computer_input = ["1", "3", "5", "7"].find do |corner| !board.taken?(corner)
         end
-      elsif board.turn_count == 3
+      elsif board.turn_count >= 3
         computer_input = rand(1..9)
         if !board.valid_move?(computer_input)
           move(board)
